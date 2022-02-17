@@ -6,7 +6,7 @@
 template<class T>
 class LinkList{
 private:
-	//数据成员
+	//数据成员                    https://blog.csdn.net/lslfox/article/details/106753635
 	Node<T> *head, *rear;	// 表头，表尾
 	Node<T> *prePtr, *curPtr;	// 记录表当前遍历位置的指针，由插入和删除操作更新
 	int size;	// 表中的元素个数
