@@ -6,46 +6,46 @@
 template<class T>
 class LinkList{
 private:
-	//Êı¾İ³ÉÔ±
-	Node<T> *head, *rear;	// ±íÍ·£¬±íÎ²
-	Node<T> *prePtr, *curPtr;	// ¼ÇÂ¼±íµ±Ç°±éÀúÎ»ÖÃµÄÖ¸Õë£¬ÓÉ²åÈëºÍÉ¾³ı²Ù×÷¸üĞÂ
-	int size;	// ±íÖĞµÄÔªËØ¸öÊı
-	int position; //µ±Ç°ÔªËØÔÚ±íÖĞµÄÎ»ÖÃĞòºÅ£¬ÓÉº¯ÊıresetÊ¹ÓÃ¡£
-	//º¯Êı³ÉÔ±
-	//Éú³ÉĞÂ½áµã£¬Êı¾İÓòÎªitem£¬Ö¸ÕëÓòÎªptrNext¡£
+	//æ•°æ®æˆå‘˜
+	Node<T> *head, *rear;	// è¡¨å¤´ï¼Œè¡¨å°¾
+	Node<T> *prePtr, *curPtr;	// è®°å½•è¡¨å½“å‰éå†ä½ç½®çš„æŒ‡é’ˆï¼Œç”±æ’å…¥å’Œåˆ é™¤æ“ä½œæ›´æ–°
+	int size;	// è¡¨ä¸­çš„å…ƒç´ ä¸ªæ•°
+	int position; //å½“å‰å…ƒç´ åœ¨è¡¨ä¸­çš„ä½ç½®åºå·ï¼Œç”±å‡½æ•°resetä½¿ç”¨ã€‚
+	//å‡½æ•°æˆå‘˜
+	//ç”Ÿæˆæ–°ç»“ç‚¹ï¼Œæ•°æ®åŸŸä¸ºitemï¼ŒæŒ‡é’ˆåŸŸä¸ºptrNextã€‚
 	Node<T> * newNode(const T &item, Node<T> *ptrNext = NULL);
-	// ÊÍ·Å½áµã
+	// é‡Šæ”¾ç»“ç‚¹
 	void freeNode(Node<T> *p);
-	//½«Á´±íL¸´ÖÆµ½µ±Ç°±í£¨¼ÙÉèµ±Ç°±íÎª¿Õ£©
-	//±»¸´ÖÆ¹¹Ôìº¯ÊıºÍ¡°operator¡±µ÷ÓÃ
+	//å°†é“¾è¡¨Lå¤åˆ¶åˆ°å½“å‰è¡¨ï¼ˆå‡è®¾å½“å‰è¡¨ä¸ºç©ºï¼‰
+	//è¢«å¤åˆ¶æ„é€ å‡½æ•°å’Œâ€œoperatorâ€è°ƒç”¨
 	void copy(const LinkList<T> & L);
 public:
-	LinkList();		//¹¹Ôìº¯Êı
-	LinkList(const LinkList<T> &L);	//¸´ÖÆ¹¹Ôìº¯Êı
-	~LinkList();	//Îö¹¹º¯Êı
-	LinkList<T>& operator=(const LinkList<T> &L);	//ÖØÔØ¸³ÖµÔËËã·û
+	LinkList();		//æ„é€ å‡½æ•°
+	LinkList(const LinkList<T> &L);	//å¤åˆ¶æ„é€ å‡½æ•°
+	~LinkList();	//ææ„å‡½æ•°
+	LinkList<T>& operator=(const LinkList<T> &L);	//é‡è½½èµ‹å€¼è¿ç®—ç¬¦
 
-	int getSize() const;	//·µ»ØÁ´±íÖĞÔªËØ¸öÊı
-	bool isEmpty() const;	//Á´±íÊÇ·ñÎª¿Õ
+	int getSize() const;	//è¿”å›é“¾è¡¨ä¸­å…ƒç´ ä¸ªæ•°
+	bool isEmpty() const;	//é“¾è¡¨æ˜¯å¦ä¸ºç©º
 
-	void reset(int pos = 0);	//³õÊ¼»¯ÓÎ±êÎ»ÖÃ
-	void next();				//ÊÇÓÎ±êÒÆ¶¯µ½ÏÂÒ»¸ö½áµã
-	bool endOfList() const;		//ÓÎ±êÊÇ·ñµ½ÁËÁ´Î²
-	int currentPosition() const;	//·µ»ØÓÎ±êµ±Ç°Î»ÖÃ
+	void reset(int pos = 0);	//åˆå§‹åŒ–æ¸¸æ ‡ä½ç½®
+	void next();				//æ˜¯æ¸¸æ ‡ç§»åŠ¨åˆ°ä¸‹ä¸€ä¸ªç»“ç‚¹
+	bool endOfList() const;		//æ¸¸æ ‡æ˜¯å¦åˆ°äº†é“¾å°¾
+	int currentPosition() const;	//è¿”å›æ¸¸æ ‡å½“å‰ä½ç½®
 
-	void insertFront(const T &item);	//ÔÚ±íÍ·²åÈë½áµã
-	void insertRear(const T &item);		//ÔÚ±íÎ²²åÈë½áµã
+	void insertFront(const T &item);	//åœ¨è¡¨å¤´æ’å…¥ç»“ç‚¹
+	void insertRear(const T &item);		//åœ¨è¡¨å°¾æ’å…¥ç»“ç‚¹
 
-	void insertAt(const T &item);		//ÔÚµ±Ç°½áµãÖ®Ç°²åÈë½áµã
-	void insertAfter(const T &item);	//ÔÚµ±Ç°½áµãÖ®ºó²åÈë½áµã
+	void insertAt(const T &item);		//åœ¨å½“å‰ç»“ç‚¹ä¹‹å‰æ’å…¥ç»“ç‚¹
+	void insertAfter(const T &item);	//åœ¨å½“å‰ç»“ç‚¹ä¹‹åæ’å…¥ç»“ç‚¹
 
-	T deleteFront();		//É¾³ıÍ·½áµã
-	void deleteCurrent();	//É¾³ıµ±Ç°½áµã
+	T deleteFront();		//åˆ é™¤å¤´ç»“ç‚¹
+	void deleteCurrent();	//åˆ é™¤å½“å‰ç»“ç‚¹
 
-	T& data();				//·µ»Ø¶Ôµ±Ç°½áµã³ÉÔ±Êı¾İµÄÒıÓÃ
-	const T& data() const;	//·µ»Ø¶Ôµ±Ç°½áµã³ÉÔ±Êı¾İµÄ³£ÒıÓÃ
+	T& data();				//è¿”å›å¯¹å½“å‰ç»“ç‚¹æˆå‘˜æ•°æ®çš„å¼•ç”¨
+	const T& data() const;	//è¿”å›å¯¹å½“å‰ç»“ç‚¹æˆå‘˜æ•°æ®çš„å¸¸å¼•ç”¨
 
-	//Çå¿ÕÁ´±í£ºÊÍ·ÅËùÓĞ½áµãµÄÄÚ´æ¿Õ¼ä¡£±»Îö¹¹º¯ÊıºÍ¡°operator=¡±µ÷ÓÃ
+	//æ¸…ç©ºé“¾è¡¨ï¼šé‡Šæ”¾æ‰€æœ‰ç»“ç‚¹çš„å†…å­˜ç©ºé—´ã€‚è¢«ææ„å‡½æ•°å’Œâ€œoperator=â€è°ƒç”¨
 	void clear();
 };
 
